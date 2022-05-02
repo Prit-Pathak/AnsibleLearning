@@ -1,0 +1,16 @@
+---
+- name: apache install
+  hosts: localhosts
+  become: true
+
+  tasks:
+    name: Install the latest version of Apache
+    apt:
+      name: httpd
+      state: latest
+
+    name: Install Apache >= 2.4
+    apt:
+      name: httpd>=2.4
+      state: present
+

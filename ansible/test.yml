@@ -1,0 +1,14 @@
+---
+- name: ngnix install & start services
+  hosts: localhosts
+  become: true
+
+  tasks:
+    - name: install ngnix
+      apt:
+        name: nginx
+        state: latest
+    - name: start nginx
+      service:
+         name: nginx
+         state: started
