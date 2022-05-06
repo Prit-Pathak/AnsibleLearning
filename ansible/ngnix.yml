@@ -1,11 +1,11 @@
 ---
 - name: ngnix install & start services
-  hosts: 192.168.1.120
+  hosts: all
   become: true
 
   tasks:
     - name: install ngnix
-      yum:
+      apt:
          name: ngnix
          state: latest
     - name: start ngnix
